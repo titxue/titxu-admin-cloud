@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.titxu.cloud</groupId>
+    <artifactId>titxu-cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <name>${project.artifactId}</name>
+    <description>后台</description>
+
+
+    <properties>
+        <!-- 项目模块本版本号 -->
+        <titxu.cloud.version>1.0.0</titxu.cloud.version>
+        <!-- 项目jdk -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- 项目编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- springboot版本号 -->
+        <spring-boot.version>3.0.1</spring-boot.version>
+        <!-- 监控客户端版本号 -->
+        <spring-boot-admin.version>3.0.0-M8</spring-boot-admin.version>
+        <!-- spring-cloud版本号-->
+        <spring-cloud.version>2022.0.0</spring-cloud.version>
+        <!-- 阿里微服务框架版本号 -->
+        <com-alibaba-cloud.version>2022.0.0.0-RC1</com-alibaba-cloud.version>
+        <!-- oauth2.1 版本号 -->
+        <spring-security-oauth2-authorization-server.version>1.0.0</spring-security-oauth2-authorization-server.version>
+        <slf4j.version>2.0.5</slf4j.version>
+        
+    </properties>
+
+    <dependencies>
+        <!--配置文件处理器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--bootstrap 启动器-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <!--监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--监控客户端-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+        <!--测试依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>titxu-common</module>
+        <module>titxu-management</module>
+        <module>titxu-service</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 公共依赖管理 -->
+            <dependency>
+                <groupId>com.titxu.cloud</groupId>
+                <artifactId>titxu-common-bom</artifactId>
+                <version>${titxu.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${com-alibaba-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.titxu.cloud</groupId>
+                <artifactId>titxu-sys-api</artifactId>
+                <version>${titxu.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.titxu.cloud</groupId>
+                <artifactId>titxu-wechat-api</artifactId>
+                <version>${titxu.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-authorization-server</artifactId>
+                <version>${spring-security-oauth2-authorization-server.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <id>nexus-aliyun</id>-->
+    <!--            <name>nexus-aliyun</name>-->
+    <!--            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>-->
+    <!--            <releases>-->
+    <!--                <enabled>true</enabled>-->
+    <!--            </releases>-->
+    <!--            <snapshots>-->
+    <!--                <enabled>false</enabled>-->
+    <!--            </snapshots>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
+    <repositories>
+        <repository>
+            <id>spring</id>
+            <url>https://maven.aliyun.com/repository/spring</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+</project>

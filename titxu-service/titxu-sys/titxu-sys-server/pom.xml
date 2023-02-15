@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>titxu-sys</artifactId>
+        <groupId>com.titxu.cloud</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>titxu-sys-server</artifactId>
+
+    <properties>
+        <kaptcha.version>0.0.9</kaptcha.version>
+        <commons-io.version>2.11.0</commons-io.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-swagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-tenant</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-log</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-sys-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-json</artifactId>
+        </dependency>
+        <!--注册中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--配置中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- LB 扩展 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.axet</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>${kaptcha.version}</version>
+        </dependency>
+        <!-- feign -->
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-feign</artifactId>
+        </dependency>
+        <!--undertow容器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <!-- 仅为了提供：IOUtils -->
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+            <!-- 依赖传递性：https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html -->
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>titxu-sys-server</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.json</include>
+                    <include>**/*.ftl</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

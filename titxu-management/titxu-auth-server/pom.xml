@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>titxu-management</artifactId>
+        <groupId>com.titxu.cloud</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>titxu-auth-server</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-swagger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-log</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-sys-api</artifactId>
+        </dependency>
+        <!--注册中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--配置中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- LB 扩展 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--freemarker-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!-- feign -->
+        <dependency>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-feign</artifactId>
+        </dependency>
+        <!-- OAuth 2.1 依赖 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/security/spring-security-oauth2-authorization-server -->
+        <!-- https://repo.spring.io/ui/native/milestone/org/springframework/security/spring-security-oauth2-authorization-server -->
+        <!-- https://github.com/spring-projects/spring-authorization-server -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
+        </dependency>
+        <!--undertow容器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>titxu-auth-server</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

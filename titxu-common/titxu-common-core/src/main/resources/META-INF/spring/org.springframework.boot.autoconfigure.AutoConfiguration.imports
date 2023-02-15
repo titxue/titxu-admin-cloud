@@ -1,0 +1,2 @@
+com.titxu.cloud.common.core.config.WebMvcConfiguration
+com.titxu.cloud.common.core.util.SpringContextHolder

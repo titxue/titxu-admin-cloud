@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>titxu-cloud</artifactId>
+        <groupId>com.titxu.cloud</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>titxu-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>通用模块</description>
+
+    <modules>
+        <module>titxu-common-bom</module>
+        <module>titxu-common-core</module>
+        <module>titxu-common-mybatis</module>
+        <module>titxu-common-redis</module>
+        <module>titxu-common-web</module>
+        <module>titxu-common-log</module>
+        <module>titxu-common-swagger</module>
+        <module>titxu-common-tenant</module>
+        <module>titxu-common-security</module>
+        <module>titxu-common-feign</module>
+    </modules>
+
+
+</project>
