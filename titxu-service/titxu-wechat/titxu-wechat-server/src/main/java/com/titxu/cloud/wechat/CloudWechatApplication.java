@@ -11,7 +11,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients(defaultConfiguration = {FeignConfiguration.class, FeignClientEncoder.class})
 public class CloudWechatApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(CloudWechatApplication.class);
     }

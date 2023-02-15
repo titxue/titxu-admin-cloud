@@ -39,7 +39,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-kafka</artifactId>
         </dependency>
-
         <!-- Spring Data JPA 依赖（重要） -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
