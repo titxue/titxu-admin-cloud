@@ -1,23 +1,21 @@
 package com.titxu.cloud.wechat.infrastructure.persistence.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "wx_messages")
-public class WxMessage {
-    
+public class WxMessage extends BaseEntity{
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private String id;
-    
+
     @Column(name = "guid")
     private String guid;
     
@@ -50,26 +48,5 @@ public class WxMessage {
     
     @Column(name = "type")
     private Integer type;
-    
-    @Column(name = "remarks")
-    private String remarks;
-    
-    @Column(name = "tenant_id")
-    private String tenantId;
-    
-    @Column(name = "del_flag")
-    private char delFlag;
-    
-    @Column(name = "created_by")
-    private String createdBy;
-    
-    @Column(name = "created_time")
-    private LocalDateTime createdTime;
-    
-    @Column(name = "updated_by")
-    private String updatedBy;
-    
-    @Column(name = "updated_time")
-    private LocalDateTime updatedTime;
 
 }
