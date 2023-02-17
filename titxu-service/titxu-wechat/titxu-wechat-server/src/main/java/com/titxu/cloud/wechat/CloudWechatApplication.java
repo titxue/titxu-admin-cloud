@@ -1,7 +1,7 @@
 package com.titxu.cloud.wechat;
 
 import com.titxu.cloud.common.feign.config.FeignConfiguration;
-import com.titxu.cloud.wechat.infrastructure.feign.wechat.config.FeignClientEncoder;
+import com.titxu.cloud.wechat.infrastructure.feign.config.FeignClientEncoder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

@@ -10,12 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>titxu-wechat-api</artifactId>
+    <description>
+        微信服务API模块
+    </description>
 
     <dependencies>
+        <!-- feign -->
         <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>12.1</version>
+            <groupId>com.titxu.cloud</groupId>
+            <artifactId>titxu-common-feign</artifactId>
         </dependency>
     </dependencies>
 </project>

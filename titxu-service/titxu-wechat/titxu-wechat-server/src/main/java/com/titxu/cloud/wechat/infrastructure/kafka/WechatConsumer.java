@@ -1,8 +1,8 @@
 package com.titxu.cloud.wechat.infrastructure.kafka;
 
 import com.alibaba.fastjson2.JSON;
-import com.titxu.cloud.wechat.application.dto.WeChatDto;
-import com.titxu.cloud.wechat.application.enums.WeChatMessageEnum;
+import com.titxu.cloud.wechat.infrastructure.kafka.dto.WeChatDto;
+import com.titxu.cloud.wechat.infrastructure.kafka.enums.WeChatMessageEnum;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 

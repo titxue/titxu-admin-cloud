@@ -1,9 +1,10 @@
 package com.titxu.cloud.wechat.infrastructure.feign.wechat;
 
 import com.titxu.cloud.common.core.util.ResponseModel;
-import com.titxu.cloud.wechat.api.query.wechat.ClientOpenReqModel;
-import com.titxu.cloud.wechat.api.query.wechat.ClientReqModel;
-import com.titxu.cloud.wechat.api.query.wechat.SendTextReqModel;
+import com.titxu.cloud.wechat.infrastructure.feign.RemoteWechatService;
+import com.titxu.cloud.wechat.infrastructure.feign.contract.request.ClientOpenReqModel;
+import com.titxu.cloud.wechat.infrastructure.feign.contract.request.ClientReqModel;
+import com.titxu.cloud.wechat.infrastructure.feign.contract.request.SendTextReqModel;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

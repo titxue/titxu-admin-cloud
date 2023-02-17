@@ -8,18 +8,16 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <description>
+        微信服务实现模块
+        对微信服务API模块进行实现
+    </description>
     <artifactId>titxu-wechat-server</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.titxu.cloud</groupId>
             <artifactId>titxu-wechat-api</artifactId>
-        </dependency>
-        <!-- feign -->
-        <dependency>
-            <groupId>com.titxu.cloud</groupId>
-            <artifactId>titxu-common-feign</artifactId>
         </dependency>
         <dependency>
             <groupId>com.titxu.cloud</groupId>
