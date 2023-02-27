@@ -1,4 +1,4 @@
-package com.titxu.cloud.management.auth.filter;
+package com.titxu.cloud.management.auth.infrastructure.filter;
 
 
 import com.alibaba.fastjson2.JSONObject;

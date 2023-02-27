@@ -20,5 +20,5 @@
  * 14. 定义服务事件
  */
 module titxu.wechat.api {
-    exports com.titxu.cloud.contract.request;
+    requires spring.core;
 }

@@ -17,6 +17,7 @@
 package com.titxu.cloud.common.security.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
@@ -29,6 +30,7 @@ import static org.springframework.boot.autoconfigure.condition.ConditionalOnWebA
 /**
  * <p>
  * 注入自定义错误处理,覆盖 org/springframework/security/messages 内置异常
+ * @see UserDetailsServiceAutoConfiguration
  */
 @ConditionalOnWebApplication(type = SERVLET)
 public class SecurityMessageSourceConfiguration implements WebMvcConfigurer {

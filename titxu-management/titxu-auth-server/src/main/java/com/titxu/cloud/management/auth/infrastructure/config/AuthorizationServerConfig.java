@@ -1,4 +1,4 @@
-package com.titxu.cloud.management.auth.config;
+package com.titxu.cloud.management.auth.infrastructure.config;
 
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;

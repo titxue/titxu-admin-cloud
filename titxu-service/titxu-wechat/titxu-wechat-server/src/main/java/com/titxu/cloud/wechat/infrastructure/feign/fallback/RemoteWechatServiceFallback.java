@@ -3,7 +3,6 @@ package com.titxu.cloud.wechat.infrastructure.feign.fallback;
 import com.titxu.cloud.common.core.util.ResponseModel;
 import com.titxu.cloud.wechat.infrastructure.feign.RemoteWechatService;
 import com.titxu.cloud.wechat.infrastructure.feign.contract.request.*;
-import com.titxu.cloud.wechat.infrastructure.feign.request.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
